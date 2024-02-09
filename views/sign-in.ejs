@@ -1,0 +1,71 @@
+<section class="body-sign">
+    <div class="center-sign">
+        <div class="panel card-sign">
+            <div class="card-body">
+                <form action="/sign-in" method="POST" class="js-sign-in-form">
+                    <div class="form-group mb-3">
+                        <label>Username</label>
+                        <div class="input-group">
+                            <input name="username" type="text" class="form-control form-control-lg js-sign-in-username"/>
+                            <span class="input-group-text">
+                                <i class="bx bx-user text-4"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <div class="clearfix">
+                            <label class="float-left">Password</label>
+                        </div>
+                        <div class="input-group">
+                            <input name="password" type="password" class="form-control form-control-lg js-sign-in-password"/>
+                            <span class="input-group-text">
+                                <i class="bx bx-lock text-4"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="checkbox-custom checkbox-default">
+                                <input id="RememberMe" name="rememberme" type="checkbox"/>
+                                <label for="RememberMe">Remember Me</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-end">
+                            <button type="submit" class="btn btn-primary mt-2">Sign In</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            const $form = $('.js-sign-in-form');
+            const $username = $('.js-sign-in-username');
+            const $password = $('.js-sign-in-password');
+
+            $form.on('submit', function (e) {
+                e.preventDefault();
+
+                $.ajax({
+                    url: '/auth/sign-in',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    dataType: 'json',
+                    data: JSON.stringify({
+                        username: $username.val(),
+                        password: $password.val()
+                    }),
+                    success: function (data) {
+                        if (data.status === 'success') {
+                            window.location.href = '/dashboard';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</section>

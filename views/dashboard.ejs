@@ -1,0 +1,566 @@
+<div class="row">
+    <div class="col-lg-12 mb-3">
+        <form
+                id="form"
+                action="/dashboard/sessions/new"
+                class="form-horizontal"
+                novalidate="novalidate"
+        >
+            <section class="card">
+                <div class="card-body">
+                    <div class="form-group row pb-3">
+                        <div class="col-lg-2 col-md-4">
+                            <label class="control-label text-sm-start pt-2">Truck</label>
+
+                            <div class="col-lg-12">
+                                <select
+                                        name="truck_types"
+                                        class="form-control"
+                                        multiple="multiple"
+                                        data-plugin-multiselect
+                                        data-plugin-options='{ "maxHeight": 200, "numberDisplayed": 1, "nonSelectedText": "---" }' id="ms_example0"
+                                        value="<%= lastFilter?.truck_types %>"
+                                >
+                                    <option value="N">N - Conestoga</option>
+                                    <option value="C">C - Containers</option>
+                                    <option value="K">K - Decks, Specialized</option>
+                                    <option value="D">D - Decks, Standard</option>
+                                    <option value="B">B - Dry Bulk</option>
+                                    <option value="F">F - Flatbeds</option>
+                                    <option value="Z">Z - Hazardous Materials</option>
+                                    <option value="O">O - Other Equipment</option>
+                                    <option value="R">R - Reefers</option>
+                                    <option value="T">T - Tankers</option>
+                                    <option value="S">S - Vans, Specialized</option>
+                                    <option value="V">V - Vans, Standard</option>
+                                    <option value="AC">AC - Auto Carrier</option>
+                                    <option value="BT">BT - B-Train</option>
+                                    <option value="CN">CN - Conestoga</option>
+                                    <option value="CI">CI - Container Insulated</option>
+                                    <option value="CR">CR - Container Refrigerated</option>
+                                    <option value="CV">CV - Conveyor</option>
+                                    <option value="CR">CR - Container Refrigerated</option>
+                                    <option value="DD">DD - Double Drop</option>
+                                    <option value="DT">DT - Dump Trailer</option>
+                                    <option value="FA">FA - Flatbed Air-Ride</option>
+                                    <option value="FN">FN - Flatbed Conestoga</option>
+                                    <option value="F2">F2 - Flatbed Double</option>
+                                    <option value="FZ">FZ - Flatbed HazMat</option>
+                                    <option value="FH">FH - Flatbed Hotshot</option>
+                                    <option value="MX">MX - Flatbed Maxi</option>
+                                    <option value="FD">FD - Flatbed or Step Deck</option>
+                                    <option value="FS">FS - Flatbed w/Sides</option>
+                                    <option value="FT">FT - Flatbed w/Tarps</option>
+                                    <option value="FM">FM - Flatbed w/Team</option>
+                                    <option value="FO">FO - Flatbed, Over Dimension</option>
+                                    <option value="FC">FC - Flatbed, w/Chains</option>
+                                    <option value="FR">FC - Flatbed, w/Chains</option>
+                                    <option value="HB">HB - Hopper Bottom</option>
+                                    <option value="IR">IR - Insulated Van or Reefer</option>
+                                    <option value="LB">LB - Lowboy</option>
+                                    <option value="LR">LR - Lowboy or RGN</option>
+                                    <option value="LO">LO - Lowboy, Over Dimension</option>
+                                    <option value="MV">MV - Moving Van</option>
+                                    <option value="NU">NU - Pneumatic</option>
+                                    <option value="PO">PO - Power Only</option>
+                                    <option value="RA">RA - Reefer Air-Ride</option>
+                                    <option value="R2">R2 - Reefer Double</option>
+                                    <option value="RZ">RZ - Reefer HazMat</option>
+                                    <option value="RN">RN - Reefer Intermodal</option>
+                                    <option value="RL">RL - Reefer Logistics</option>
+                                    <option value="RV">RV - Reefer or Vented Van</option>
+                                    <option value="RM">RM - Reefer w/Team</option>
+                                    <option value="RP">RP - Reefer, w/Pallet Exchange</option>
+                                    <option value="RG">RG - Removable Gooseneck</option>
+                                    <option value="SD">SD - Step Deck</option>
+                                    <option value="SR">SR - Step Deck or RGN</option>
+                                    <option value="SN">SN - Stepdeck Conestoga</option>
+                                    <option value="SB">SB - Straight Box Truck</option>
+                                    <option value="ST">ST - Stretch Trailer</option>
+                                    <option value="TA">TA - Tanker Aluminum</option>
+                                    <option value="TN">TN - Tanker Intermodal</option>
+                                    <option value="TS">TS - Tanker Steel</option>
+                                    <option value="TT">TT - Truck and Trailer</option>
+                                    <option value="VA">VA - Van Air-Ride</option>
+                                    <option value="VS">VS - Van Conestoga</option>
+                                    <option value="V2">V2 - Van Double</option>
+                                    <option value="VZ">VZ - Van HazMat</option>
+                                    <option value="VH">VH - Van Hotshot</option>
+                                    <option value="VI">VI - Van Insulated</option>
+                                    <option value="VN">VN - Van Intermodal</option>
+                                    <option value="VG">VG - Van Lift-Gate</option>
+                                    <option value="VL">VL - Van Logistics</option>
+                                    <option value="OT">OT - Van Open-Top</option>
+                                    <option value="VT">VT - Van or Flatbed w/Tarps</option>
+                                    <option value="VF">VF - Van or Flatbed</option>
+                                    <option value="VR">VR - Van or Reefer</option>
+                                    <option value="VB">VB - Van Roller Bed</option>
+                                    <option value="V3">V3 - Van Triple</option>
+                                    <option value="VV">VV - Van Vented</option>
+                                    <option value="VC">VC - Van w/Curtains</option>
+                                    <option value="VM">VM - Van w/Team</option>
+                                    <option value="VW">VW - Van, w/Blanket Wrap</option>
+                                    <option value="VP">VP - Van, w/Pallet Exchange</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1 col-md-2">
+                            <label class="control-label text-sm-start pt-2"
+                            >Min. Amount <span class="required">*</span></label
+                            >
+                            <div class="">
+                                <input
+                                        type="number"
+                                        name="min_amount"
+                                        class="form-control"
+                                        placeholder="eg.: 10000"
+                                        required="required"
+                                        value="<%= lastFilter?.min_amount %>"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1 col-md-2">
+                            <label class="control-label text-sm-start pt-2">Max. Weight</label>
+                            <div class="">
+                                <input
+                                        type="number"
+                                        name="max_weight"
+                                        class="form-control"
+                                        placeholder="eg.: 34000"
+                                        step="1"
+                                        value="<%= lastFilter?.max_weight %>"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1 col-md-2">
+                            <label class="control-label text-sm-start pt-2">Min. rate/mi</label>
+                            <div class="">
+                                <input
+                                        type="number"
+                                        name="min_rpm"
+                                        class="form-control"
+                                        placeholder="eg.: 3.5"
+                                        step="0.01"
+                                        value="<%= lastFilter?.min_rpm %>"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1 col-md-2">
+                            <label class="control-label text-sm-start pt-2"
+                            >Min. rate/lbs</label
+                            >
+                            <div class="">
+                                <input
+                                        type="number"
+                                        name="min_rpl"
+                                        step="0.01"
+                                        class="form-control"
+                                        placeholder="eg.: 2.5"
+                                        value="<%= lastFilter?.min_rpl %>"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-3">
+                            <label class="control-label text-sm-start pt-2">
+                                Origin <span class="required">*</span></label>
+                            <div class="">
+                                <input
+                                        type="text"
+                                        name="origin"
+                                        class="form-control"
+                                        placeholder="City, ST / States / Zones"
+                                        required=""
+                                        value="<%= lastFilter?.origin %>"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-3">
+                            <label class="control-label text-sm-start pt-2"
+                            >Destination <span class="required">*</span></label
+                            >
+                            <div class="">
+                                <input
+                                        type="text"
+                                        name="destination"
+                                        class="form-control"
+                                        placeholder="City, ST / States / Zones"
+                                        required=""
+                                        value="<%= lastFilter?.destination %>"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-6">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <label class="control-label text-sm-start pt-2">From Date</label>
+                                    <input
+                                            min="<%= moment().format('YYYY-MM-DD'); %>"
+                                            type="date"
+                                            name="pickup_from_date"
+                                            class="form-control"
+                                    />
+
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <label class="control-label text-sm-start pt-2">To Date</label>
+                                    <input
+                                            min="<%= moment().format('YYYY-MM-DD'); %>"
+                                            type="date"
+                                            name="pickup_to_date"
+                                            class="form-control"
+                                    />
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-6">
+                            <% const pauseBtnShoutBeShown = !isIdle && hasOpenTab; %>
+                            <button
+                                    class="btn btn-primary lh-1 js-pause <%= !pauseBtnShoutBeShown && 'hidden' %>"
+                            >
+                                <i class="fas fa-pause"></i>
+                            </button>
+                            <% const startBtnShouldBeShown = !hasOpenTab; %>
+                            <button
+                                    class="btn btn-success lh-1 js-start <%= !startBtnShouldBeShown && 'hidden' %>"
+                            >
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <% const stopBtnShouldBeShown = hasOpenTab; %>
+                            <button
+                                    class="btn btn-danger lh-1 js-stop <%= !stopBtnShouldBeShown && 'hidden' %>"
+                            >
+                                <i class="fas fa-stop"></i>
+                            </button>
+                        </div>
+                        <div class="col-sm-5 alertify lh-2"></div>
+                        <div class="col-sm-1 alertify-count text-right"></div>
+                    </div>
+                </footer>
+            </section>
+        </form>
+    </div>
+    <div class="col-lg-12">
+        <section class="card">
+            <div class="card-body">
+                <div
+                        id="grid"
+                        class="ag-theme-alpine"
+                        style="height: calc(100vh - 300px)"
+                ></div>
+            </div>
+        </section>
+    </div>
+</div>
+<div
+        class="modal fade"
+        id="detailsModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Confirm
+                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                    Reject
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      let gridOptions = null;
+      window.addEventListener('DOMContentLoaded', () => {
+        const lastFilter=JSON.parse('<%-JSON.stringify(lastFilter); %>');
+        if (lastFilter && typeof lastFilter === 'object' && Object.keys(lastFilter).length) {
+          const $form = $('form');
+          Object.keys(lastFilter).forEach((key) => {
+            const $control = $form.find(`[name="${key}"]`);
+            if ($control.length && $control.prop('tagName') === 'INPUT') {
+              $control.val(lastFilter[key]);
+            }
+
+            if ($control.length && $control.prop('tagName') === 'SELECT' && $control.prop('multiple')) {
+              if (lastFilter.truck_types && lastFilter.truck_types.length) {
+                for (const lastFilterElement of lastFilter.truck_types) {
+                  $control.multiselect('select', lastFilterElement);
+                }
+              }
+            }
+          });
+        }
+
+        const $form = $('#form');
+        const $startBtn = $('.js-start');
+        const $stopBtn = $('.js-stop');
+        const $pauseBtn = $('.js-pause');
+
+        function numberCellFormatter(params) {
+          return Math.floor(params.value)
+            .toString()
+            .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+        }
+
+        $form.on('submit', e => {
+          e.preventDefault();
+          e.stopPropagation();
+        });
+
+        $startBtn.on('click', e => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          if ($stopBtn.is(':visible')) {
+            $.ajax({
+              url: '/dashboard/sessions',
+              type: 'POST',
+              contentType: 'application/json',
+              dataType: 'json',
+              data: JSON.stringify({})
+            })
+              .done(function () {
+                $startBtn.addClass('hidden');
+                $pauseBtn.attr('disabled', false).removeClass('hidden');
+              });
+
+            return;
+          }
+
+          if (!$form.get(0).checkValidity()) {
+            $form.get(0).reportValidity();
+
+            return;
+          }
+
+          $form.find('.error').remove();
+
+          const pickupFromDate = $form.find('[name="pickup_from_date"]').val();
+          const pickupToDate = $form.find('[name="pickup_to_date"]').val();
+
+          const filter = {
+            pickup_date: $('input[name="pickup_date"]').val(),
+            origin: $('input[name="origin"]').val(),
+            destination: $('input[name="destination"]').val(),
+            min_amount: $('input[name="min_amount"]').val()
+              ? parseFloat($('input[name="min_amount"]').val())
+              : 0,
+            max_weight: $('input[name="max_weight"]').val()
+              ? parseFloat($('input[name="max_weight"]').val())
+              : 0,
+            min_rpm: $('input[name="min_rpm"]').val()
+              ? parseFloat($('input[name="min_rpm"]').val())
+              : 0,
+            min_rpl: $('input[name="min_rpl"]').val()
+              ? parseFloat($('input[name="min_rpl"]').val())
+              : 0,
+            pickup_from_date: pickupFromDate ? pickupFromDate : '',
+            pickup_to_date: pickupToDate ? pickupToDate : '',
+            truck_types: $('select[name="truck_types"]').val(),
+          };
+
+          $startBtn.attr('disabled', true);
+
+          $.ajax({
+            url: '/dashboard/sessions/new',
+            type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
+            data: JSON.stringify(filter)
+          })
+            .done(function () {
+              $startBtn.attr('disabled', true).addClass('hidden');
+              $stopBtn.attr('disabled', false).removeClass('hidden');
+              $pauseBtn.attr('disabled', false).removeClass('hidden');
+            })
+            .fail(function (data) {
+              $startBtn.attr('disabled', false);
+              const { responseJSON, status } = data;
+
+              if (status === 400) {
+                responseJSON.details.forEach(({ message, context: { key } }) => {
+                  $('input[name="' + key + '"]').after(
+                    `<label class="error">${ message }</label>`
+                  );
+                });
+              }
+            });
+        });
+
+        $stopBtn.on('click', e => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          $.ajax({
+            url: '/dashboard/sessions',
+            type: 'DELETE',
+            contentType: 'application/json',
+            dataType: 'json'
+          })
+            .done(function () {
+              $stopBtn.addClass('hidden');
+              $pauseBtn.addClass('hidden');
+              $startBtn.attr('disabled', false).removeClass('hidden');
+            });
+        });
+
+        $pauseBtn.on('click', e => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          $.ajax({
+            url: '/dashboard/sessions',
+            type: 'PATCH',
+            contentType: 'application/json',
+            dataType: 'json'
+          })
+            .done(function () {
+              $pauseBtn.addClass('hidden');
+              $startBtn.attr('disabled', false).removeClass('hidden');
+            });
+        });
+
+        // Grid Options are properties passed to the grid
+        gridOptions = {
+          onRowDoubleClicked: event => {
+            const $detailsModal = $('#detailsModal');
+
+            if (event.data.status !== 'pending') {
+              $detailsModal.find('.modal-footer').addClass('hidden');
+            } else {
+              $detailsModal.find('.modal-footer').removeClass('hidden');
+            }
+
+            $detailsModal.find('.modal-body').html(event.data.details);
+            const $confirmBtn = $detailsModal.find('.modal-footer').find('.btn-primary')
+            const $rejectBtn = $detailsModal.find('.modal-footer').find('.btn-secondary')
+
+            $confirmBtn.off('click').on('click', e => {
+              e.preventDefault();
+              e.stopPropagation();
+
+              event.data.status = 'confirmed';
+              $.ajax({
+                url: `/dashboard/orders/${ event.data.id }`,
+                type: 'POST',
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify({
+                  action: 'confirm'
+                })
+              })
+                .done(function () {
+                  event.api.redrawRows();
+                  $detailsModal.modal('hide');
+
+                  $startBtn.attr('disabled', false).removeClass('hidden');
+                  $pauseBtn.addClass('hidden');
+                })
+            });
+
+            $rejectBtn.off('click').on('click', () => {
+              event.data.status = 'rejected';
+              $.ajax({
+                url: `/dashboard/orders/${ event.data.id }`,
+                type: 'POST',
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify({
+                  action: 'reject'
+                })
+              })
+                .done(function () {
+                  event.api.redrawRows();
+                  $detailsModal.modal('hide');
+                })
+            });
+
+            $detailsModal.modal('show');
+          },
+          onGridReady: function (event) {
+            console.log('The grid is now ready', event);
+            const columnState = {
+              state: [
+                {
+                  colId: 'date_created',
+                  sort: 'desc'
+                }
+              ]
+            }
+
+            event.columnApi.applyColumnState(columnState);
+          },
+          rowClassRules: {
+            'rag-amber-outer': function (params) {
+              return params.data.is_new || params.data.status === 'pending';
+            },
+            'rag-green-outer': function (params) {
+              return params.data.status === 'confirmed';
+            },
+            'rag-red-outer': function (params) {
+              return params.data.status === 'rejected';
+            }
+          },
+          columnDefs: [
+            {
+              field: 'date_created',
+              headerName: 'Created',
+              sortingOrder: ['desc'],
+              flex: 2
+            },
+            { field: 'pickup' },
+            { field: 'truck' },
+            { field: 'origin', flex: 2 },
+            { field: 'trip' },
+            { field: 'destination', headerName: 'Dest', flex: 2 },
+            { field: 'company', flex: 2 },
+            { field: 'weight', valueFormatter: numberCellFormatter },
+            { field: 'rate', valueFormatter: numberCellFormatter },
+            {
+              field: 'contact',
+              cellRenderer: item => {
+                let html = '';
+
+                if (item.value.email) {
+                    html += `<a href="mailto:${ item.value.email }">${ item.value.email.toLowerCase() }</a>`;
+                }
+
+                if (item.value.phone) {
+                    html += `<a href="tel:${ item.value.phone }">${ item.value.phone }</a>`;
+                }
+
+                return html;
+              },
+              flex: 3
+            },
+            { field: 'rpm' },
+            { field: 'rpl' }
+          ],
+          defaultColDef: { sortable: true, filter: true, flex: 1, resizable: true }
+        };
+
+        const eGridDiv = document.getElementById('grid');
+        new agGrid.Grid(eGridDiv, gridOptions);
+      });
+      window.onbeforeunload = function () {
+        return false;
+      }
+    </script>
+</div>

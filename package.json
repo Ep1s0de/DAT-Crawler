@@ -1,0 +1,44 @@
+{
+  "name": "dat-crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:production": "pm2 start ecosystem.config.js",
+    "start:server": "NODE_ENV=development nodemon main.js",
+    "start:mongo": "docker rm -f dat-crawler-mongo && docker run -d -p 27017:27017 -v $(pwd)/db:/data/db --name dat-crawler-mongo mongo:4.4.17",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cookie-session": "^2.0.44",
+    "@types/express-ejs-layouts": "^2.5.0",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "joi": "^17.6.0",
+    "moment": "^2.29.4",
+    "mongodb": "^4.9.0",
+    "pm2": "^5.3.0",
+    "puppeteer": "^16.1.0",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-angular": "^3.2.4",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "socket.io": "^4.5.1",
+    "uuid": "^8.3.2"
+  }
+}

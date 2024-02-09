@@ -1,0 +1,36 @@
+/* Add here all your CSS customizations */
+.rag-green-outer {
+    background-color: #c5e1a5 !important;
+}
+
+.rag-red-outer {
+    background-color: #ef9a9a !important;
+}
+
+.rag-amber-outer {
+    background-color: #ed9c28 !important;
+    font-weight: bold;
+}
+.lh-1 {
+    line-height: 1 !important;
+}
+
+.lh-2 {
+    line-height: 2.4 !important;
+}
+
+.multiselect-native-select .btn-group {
+    width: 100%;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.multiselect-selected-text {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+}
