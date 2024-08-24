@@ -5,6 +5,7 @@ module.exports = () => {
 
   router.use('/auth', require('./auth')(Router));
   router.use('/dashboard', require('./dashboard')(Router));
+  router.use('/cookie-parser', require('./cookie-parser')(Router));
 
   router.get('*', (req, res) => {
     res.status(404).render('404', {

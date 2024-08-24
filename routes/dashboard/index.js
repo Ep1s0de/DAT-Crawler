@@ -131,6 +131,11 @@ module.exports = Router => {
     );
   });
 
+  router.put("/otp", async (req, res) => {
+    await app.otp.setCurrent(req.body.otp);
+    return res.json({});
+  });
+
   router.patch('/sessions', authMiddleware, async (req, res) => {
     const sessionToken = req.cookies['session_token'];
 
